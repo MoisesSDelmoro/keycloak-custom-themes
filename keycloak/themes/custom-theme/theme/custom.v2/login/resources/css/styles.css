@@ -17,7 +17,8 @@
 }
 
 .login-pf body {
-  background: #e1e1e1;
+  background-image: url('https://wallpapers.com/images/hd/4k-ultra-hd-landscape-wallpaper-f7f5eax71jomzq3h.jpg');
+  /* background: #e1e1e1ee; */
   background-size: cover;
   height: 100%;
 }
