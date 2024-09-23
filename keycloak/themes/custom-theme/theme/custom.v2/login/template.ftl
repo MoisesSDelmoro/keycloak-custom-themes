@@ -13,7 +13,7 @@
         </#list>
     </#if>
     <title>${msg("loginTitle",(realm.displayName!''))}</title>
-    <link rel="icon" href="${url.resourcesPath}/img/favicon.ico" />
+    <link rel="icon" href="https://cloudmatize.actmobmarketingdigital.com.br/wp-content/uploads/2023/03/logo-cloudmatize.png" />
     <#if properties.stylesCommon?has_content>
         <#list properties.stylesCommon?split(' ') as style>
             <link href="${url.resourcesCommonPath}/${style}" rel="stylesheet" />
@@ -59,6 +59,9 @@
     <div id="kc-header-wrapper"
              class="${properties.kcHeaderWrapperClass!}">${kcSanitize(msg("loginTitleHtml",(realm.displayNameHtml!'')))?no_esc}</div>
     </div>
+</div>
+<div class="logo>
+  <img height="100px" width="230px" top="50px" src="https://cloudmatize.actmobmarketingdigital.com.br/wp-content/uploads/2023/03/logo-cloudmatize.png" alt="Cloudmatize">
 </div>
 <div class="pf-v5-c-login"
     x-data="{
@@ -208,11 +211,34 @@
       </footer>
     </main>
   </div>
-</div>
 <script type="module">
     import Alpine from "alpinejs";
-
     Alpine.start();
+
+    function enableAdminProvider() {
+        const demoLink = document.querySelector('a[aria-label="DEMO"]');
+        const usernameInput = document.getElementById('username');
+        if (demoLink && usernameInput) {
+            const value = usernameInput.value;
+            const allowedValues = "${properties.kcEnableLoginAdmOnType}".split(',');
+            if (allowedValues.includes(value)) {
+                demoLink.style.display = 'block';
+            } else {
+                demoLink.style.display = 'none';
+            }
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+       const demoLink = document.querySelector('a[aria-label="DEMO"]');
+        if (demoLink) {
+            demoLink.style.display = 'none';
+        }
+        const usernameInput = document.getElementById('username');
+        if (usernameInput) {
+            usernameInput.addEventListener('keyup', enableAdminProvider);
+        }
+    });
 </script>
 </body>
 </html>
