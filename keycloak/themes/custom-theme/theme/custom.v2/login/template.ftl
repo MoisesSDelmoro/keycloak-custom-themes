@@ -60,9 +60,6 @@
              class="${properties.kcHeaderWrapperClass!}">${kcSanitize(msg("loginTitleHtml",(realm.displayNameHtml!'')))?no_esc}</div>
     </div>
 </div>
-<div class="logo>
-  <img height="100px" width="230px" top="50px" src="https://cloudmatize.actmobmarketingdigital.com.br/wp-content/uploads/2023/03/logo-cloudmatize.png" alt="Cloudmatize">
-</div>
 <div class="pf-v5-c-login"
     x-data="{
         open: false,
@@ -210,13 +207,18 @@
         <#nested "socialProviders">
       </footer>
     </main>
+    <div class="logo">
+        <center>
+            <img width="200px" src="https://cloudmatize.actmobmarketingdigital.com.br/wp-content/uploads/2023/03/logo-cloudmatize.png" alt="Cloudmatize">
+        </center>
+    </div>
   </div>
 <script type="module">
     import Alpine from "alpinejs";
     Alpine.start();
 
     function enableAdminProvider() {
-        const demoLink = document.querySelector('a[aria-label="DEMO"]');
+        const demoLink = document.querySelector('a[aria-label="Cloudmatize"]');
         const usernameInput = document.getElementById('username');
         if (demoLink && usernameInput) {
             const value = usernameInput.value;
@@ -230,7 +232,7 @@
     }
 
     document.addEventListener("DOMContentLoaded", function() {
-       const demoLink = document.querySelector('a[aria-label="DEMO"]');
+       const demoLink = document.querySelector('a[aria-label="Cloudmatize"]');
         if (demoLink) {
             demoLink.style.display = 'none';
         }
