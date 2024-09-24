@@ -13,7 +13,7 @@
         </#list>
     </#if>
     <title>${msg("loginTitle",(realm.displayName!''))}</title>
-    <link rel="icon" href="${url.resourcesPath}/img/favicon.ico" />
+    <link rel="icon" href="https://storage.googleapis.com/cm-keycloak/themes/master-cm/img/cmlogobranca.png" />
     <#if properties.stylesCommon?has_content>
         <#list properties.stylesCommon?split(' ') as style>
             <link href="${url.resourcesCommonPath}/${style}" rel="stylesheet" />
@@ -207,12 +207,40 @@
         <#nested "socialProviders">
       </footer>
     </main>
+    <div class="logo">
+        <center>
+            <img width="200px" src="https://storage.googleapis.com/cm-keycloak/themes/master-cm/img/cmlogobranca.png" alt="Cloudmatize">
+        </center>
+    </div>
   </div>
-</div>
 <script type="module">
     import Alpine from "alpinejs";
-
     Alpine.start();
+
+    function enableAdminProvider() {
+        const demoLink = document.querySelector('a[aria-label="Cloudmatize"]');
+        const usernameInput = document.getElementById('username');
+        if (demoLink && usernameInput) {
+            const value = usernameInput.value;
+            const allowedValues = "${properties.kcEnableLoginAdmOnType}".split(',');
+            if (allowedValues.includes(value)) {
+                demoLink.style.display = 'block';
+            } else {
+                demoLink.style.display = 'none';
+            }
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+       const demoLink = document.querySelector('a[aria-label="Cloudmatize"]');
+        if (demoLink) {
+            demoLink.style.display = 'none';
+        }
+        const usernameInput = document.getElementById('username');
+        if (usernameInput) {
+            usernameInput.addEventListener('keyup', enableAdminProvider);
+        }
+    });
 </script>
 </body>
 </html>

@@ -18,10 +18,6 @@
 
 .login-pf body {
   background-image: url('https://storage.googleapis.com/cm-keycloak/themes/master-cm/img/background.png?fdf');
-  /* background-image: url('https://wallpapers.com/images/hd/4k-ultra-hd-landscape-wallpaper-f7f5eax71jomzq3h.jpg'); */
-  /* background-image: url('https://images3.alphacoders.com/262/262947.jpg'); */
-  /* background-image: url('https://wallpapercave.com/wp/W2uyrd9.jpg'); */
-  /* background: #e1e1e1ee; */
   background-size: cover;
   height: 100%;
 }

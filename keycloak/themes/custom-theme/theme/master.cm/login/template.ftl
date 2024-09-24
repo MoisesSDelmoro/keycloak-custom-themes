@@ -13,7 +13,7 @@
         </#list>
     </#if>
     <title>${msg("loginTitle",(realm.displayName!''))}</title>
-    <link rel="icon" href="https://cloudmatize.actmobmarketingdigital.com.br/wp-content/uploads/2023/03/logo-cloudmatize.png" />
+    <link rel="icon" href="https://storage.googleapis.com/cm-keycloak/themes/master-cm/img/cmlogobranca.png" />
     <#if properties.stylesCommon?has_content>
         <#list properties.stylesCommon?split(' ') as style>
             <link href="${url.resourcesCommonPath}/${style}" rel="stylesheet" />
@@ -210,7 +210,7 @@
     <div class="logo">
         <center>
             <a href="https://cloudmatize.com" aria-label="Cloudmatize" target="_blank">
-                <img width="150rem" src="https://cloudmatize.actmobmarketingdigital.com.br/wp-content/uploads/2023/03/logo-cloudmatize.png" alt="Cloudmatize">
+                <img width="150rem" src="https://storage.googleapis.com/cm-keycloak/themes/master-cm/img/cmlogobranca.png" alt="Cloudmatize">
             </a>
         </center>
     </div>
