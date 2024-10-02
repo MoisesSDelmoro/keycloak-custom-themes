@@ -17,7 +17,8 @@
 }
 
 .login-pf body {
-  background-image: url('https://storage.googleapis.com/cm-keycloak/themes/master-cm/img/backgroundAdmin.png');
+  background-image: url('https://storage.googleapis.com/cm-keycloak/themes/master-cm/img/background.png?fdaaf');
+  /* background-image: url('https://storage.googleapis.com/cm-keycloak/themes/master-cm/img/backgroundAdmin.png'); */
   background-size: cover;
   height: 100%;
 }

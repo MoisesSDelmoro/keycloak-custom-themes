@@ -1,0 +1,32 @@
+# # Use a imagem oficial do Keycloak como base
+# FROM quay.io/keycloak/keycloak:25.0.6
+
+# # Defina o diretório de trabalho
+# WORKDIR /opt/keycloak
+
+# # Copie o diretório de temas personalizados
+# COPY ./keycloak/realm.json /opt/keycloak/data/import/realm.json
+# COPY ./keycloak/themes/custom-theme/theme /opt/keycloak/themes/custom-theme
+
+# # Defina as variáveis de ambiente
+# ENV KC_DB=mysql
+# ENV KC_DB_URL_HOST=34.72.136.247
+# ENV KC_DB_SCHEMA=keycloak_temp2
+# ENV KC_DB_USERNAME=keycloak_temp
+# ENV KC_DB_PASSWORD=Xi9QmkGFgXnV2b2wTy4MQodvxfxxCDABrCquY
+# ENV KC_METRICS_ENABLED=true
+# ENV KC_LOG_LEVEL=INFO
+# ENV KC_REALM_NAME=grafana
+# ENV KEYCLOAK_ADMIN=gde
+# ENV KEYCLOAK_ADMIN_PASSWORD=cRu864TveEtnWi8oaQK80BWncujcJXug
+# ENV KEYCLOAK_ENABLE_LOGIN_ADM_ONTYPE=cm,4s
+# # ENV GF_URL=${GF_HOSTNAME}:${GF_SERVER_HTTP_PORT}
+# # ENV GF_ADMIN_USERNAME=${GF_ADMIN_USERNAME}
+# # ENV GF_ADMIN_PASSWORD=${GF_ADMIN_PASSWORD}
+
+# ENV KC_HOSTNAME=http://localhost
+# # Exponha a porta do Keycloak
+# EXPOSE 8080
+
+# # Comando para iniciar o Keycloak
+# ENTRYPOINT ["./bin/kc.sh", "start-dev", "--import-realm"]
